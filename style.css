@@ -1,0 +1,128 @@
+:root {
+  --neon-pink: #ff00ff;
+  --bg: #0d0d0d;
+  --text: #ffffff;
+  --font-main: "Inter Tight", sans-serif;
+  --font-neon: "Neonderthaw", cursive;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-main);
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--neon-pink);
+  font-family: var(--font-neon);
+  font-size: 4rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-family: var(--font-main);
+}
+
+.skills,
+.projects,
+.contact {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--neon-pink);
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.skills li:hover {
+  background-color: var(--neon-pink);
+  color: black;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.project {
+  perspective: 1000px;
+}
+
+.project .front,
+.project .back {
+  background: #1a1a1a;
+  color: var(--neon-pink);
+  border: 2px solid var(--neon-pink);
+  border-radius: 20px;
+  padding: 2rem;
+  transform: translateX(25%);
+  transition: transform 0.8s;
+  backface-visibility: hidden;
+  position: absolute;
+  width: 50%;
+  box-shadow: 0 0 20px var(--neon-pink);
+}
+
+.project .back {
+  transform: rotateY(180deg);
+  transform: translateX(25%);
+}
+
+.project:hover .front {
+  transform: rotateY(180deg);
+}
+
+.project:hover .back {
+  transform: rotateY(360deg);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+input,
+textarea,
+button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--neon-pink);
+  color: black;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ff33ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills ul {
+    flex-direction: column;
+  }
+}
